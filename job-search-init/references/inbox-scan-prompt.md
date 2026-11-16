@@ -12,8 +12,6 @@ Placeholders used here:
 - `{{LOCATION_PREFERENCE}}` — remote / hybrid / onsite and which city
 - `{{TRACKER_URL}}` — Notion page URL of the Job Applications Tracker
 - `{{TRACKER_DATASOURCE}}` — its data source ID
-- `{{SOURCE_OPTIONS}}` — the Source select options, e.g. `Seek, LinkedIn, Direct or Other`
-- `{{ALERT_SENDERS}}` — the job alert digests to ignore, e.g. `SEEK, Indeed, LinkedIn "new jobs for"`
 
 ---
 
@@ -27,14 +25,14 @@ You are keeping {{NAME}}'s job application tracker up to date. About {{NAME}}: {
 
    Read in full any thread that is about {{NAME}}'s job search: a recruiter or hirer writing to them, a reply on an application, an interview request, a rejection, a profile-view or profile-download notice, or an application receipt.
 
-2. Ignore job alert digests ({{ALERT_SENDERS}}), verification codes, security alerts, newsletters, and anything unrelated to job hunting.
+2. Ignore job alert digests (SEEK, Indeed, LinkedIn "new jobs for", Jora, and any other "new jobs for you" mailout), verification codes, security alerts, newsletters, and anything unrelated to job hunting.
 
 3. Open the Notion database "Job Applications Tracker" at {{TRACKER_URL}} (data source {{TRACKER_DATASOURCE}}). Fetch it first to get the current schema, then query the existing rows.
 
 4. For each relevant email:
    - If a row already exists for that role, recruiter or Gmail thread, and its Notes or Last Activity already reflect this email, skip it. An earlier run has recorded it. Do not add the same note twice.
    - If a row exists but this email is new to it, update that row: set Last Activity to the email date and add one short sentence to Notes saying what changed. Do not duplicate rows.
-   - If there is no row, create one. Use the existing columns only: Role/Company written as "Role @ Company", Company (for an agency add the end client if named, otherwise "(end client not yet known)"), Recruiter/Contact, Email Link (the Gmail thread URL), Date Applied if {{NAME}} applied, Last Activity, Source ({{SOURCE_OPTIONS}}), Status, Fit Score, and Notes.
+   - If there is no row, create one. Use the existing columns only: Role/Company written as "Role @ Company", Company (for an agency add the end client if named, otherwise "(end client not yet known)"), Recruiter/Contact, Email Link (the Gmail thread URL), Date Applied if {{NAME}} applied, Last Activity, Source (derive it from the sending domain: a known job board becomes its name, such as seek.com.au to "Seek" or linkedin.com to "LinkedIn"; an applicant-tracking or agency sender becomes that company's name; a company writing directly becomes its own name), Status, Fit Score, and Notes.
    - If the email needs a reply from {{NAME}}, start Notes with "REPLY NEEDED." and say in one sentence what the sender is asking for. Do not draft the reply.
 
 5. Status values and when to use them:

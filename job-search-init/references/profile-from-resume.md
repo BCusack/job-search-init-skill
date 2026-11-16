@@ -20,19 +20,19 @@ If no resume turns up, ask for one or ask them to paste it. If they have neither
 
 ## Step B — Read the inbox once
 
-Which job boards they use and what they have already applied to are both sitting in their email. Searching is better than asking: people forget half of it, and the inbox is current.
+What they have already applied to is sitting in their email. Searching is better than asking: people forget half of it, and the inbox is current.
 
-Search Gmail across about 30 days for application receipts, recruiter mail, and job alert digests. From that, work out:
+Search Gmail across about 30 days for application receipts and recruiter mail, to find **roles already in flight**. These become the tracker's first rows.
 
-- **The `Source` options** — the boards actually sending them mail.
-- **The alert senders to ignore** — the digests that will otherwise flood every run. This is the single biggest source of noise in a job-hunting inbox.
-- **Roles already in flight** — candidate first rows for the tracker, which the stale check needs in order to be useful from day one.
+This matters more than it looks. The stale check works off Last Activity, or Date Applied when that is empty, so an empty tracker has nothing that *can* go stale — and the applications most likely to have gone quiet are exactly the ones that predate the setup. Seeding from receipts means something can go stale on day one.
+
+Nothing else needs discovering here. Source is derived from each sender's domain as mail arrives, and the alert digests to ignore are already named in the task prompt.
 
 This is the one point in setup that touches a lot of email at once. It is read-only, but show the list and get a yes before creating rows. Importing a month of someone's history silently is not a good first impression, and they may want half of it left out.
 
 ## Step C — Confirm, and ask about pay
 
-Show one short screen of what you worked out: name and addresses, location and time zone, current seniority and domain, the boards found, and how many in-flight applications you can seed. Ask them to correct anything wrong — correcting a list is far quicker than answering questions.
+Show one short screen of what you worked out: name and addresses, location and time zone, current seniority and domain, and how many in-flight applications you can seed. Ask them to correct anything wrong — correcting a list is far quicker than answering questions.
 
 Then ask the one thing neither the resume nor the inbox can tell you:
 
@@ -79,9 +79,6 @@ A plain list.
 
 ## Profiles
 LinkedIn and anything else hirers find them through.
-
-## Where I'm applying
-The boards found in the inbox pass.
 
 ## Live as of <date>
 Applications seeded from the inbox pass.

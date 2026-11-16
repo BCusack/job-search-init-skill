@@ -22,10 +22,16 @@ Give the data source a description naming what it tracks and where the roles com
 | Email Link | URL | The Gmail thread URL, so a row is one click from its conversation |
 | Date Applied | Date | Empty for inbound approaches they have not acted on |
 | Last Activity | Date | Driven by the inbox scan; the stale check reads this |
-| Source | Select | `Seek` (blue), `LinkedIn` (purple), `Direct` (grey), `Other` (default) — adjust to the boards they actually use |
+| Source | Text | Derived from the sending domain — see below |
 | Status | **Status** | Grouped, see below. Default option `Not started` |
 | Fit Score | Select | `Strong` (green), `Possible` (yellow), `Poor` (red) |
 | Notes | Text | A running history, newest sentence appended |
+
+**Source is plain text, derived from the sending domain, not a dropdown.** A fixed set of options has to be decided before anyone knows which boards this person uses, and whatever you pick will be wrong for someone — a dropdown of Australian boards is useless to a friend in the UK, and everything lands in "Other". Deriving it from the domain means it is always right and nobody has to maintain a list: `seek.com.au` becomes `Seek`, `linkedin.com` becomes `LinkedIn`, a company writing directly becomes its own name.
+
+Expect a lot of applicant-tracking vendors in there — Workable, Greenhouse, JobAdder, SmartRecruiters and the like — because that is who actually sends application receipts. Use that vendor's name when there is nothing better; it is still more informative than `Other`, and the Company column carries the thing they care about.
+
+The cost of text over a select is that you cannot group or colour by it, and two spellings of the same source will not merge. Neither matters here: Source is a detail you glance at on a card, and the view that matters groups by Status.
 
 **Status must be a Status property, not a Select.** The board view groups by its built-in groups, and a Select cannot do that. Set the groups up like this:
 

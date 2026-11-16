@@ -6,7 +6,7 @@ Built from a setup that has been running daily through a real job hunt, generali
 
 ## What you get
 
-Run the skill once. It reads your resume from Drive and scans 30 days of your inbox to work out most of the setup itself, asks you one question (your pay expectation), then creates:
+Run the skill once. It reads your resume from Drive and scans 30 days of your inbox for applications already in flight, asks you one question (your pay expectation), then creates:
 
 - **Job Search HQ** — one Notion page holding everything.
 - **Job Applications Tracker** — one row per role or recruiter approach, with status, fit score, last activity and a running history.

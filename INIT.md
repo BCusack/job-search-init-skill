@@ -38,15 +38,13 @@ Do not interview them. Read their resume and their inbox, then confirm.
 
 No resume in Drive? Ask for one or ask them to paste it. If they have neither, skip to the fallback questions below.
 
-**From the inbox** — search Gmail across about 30 days for application receipts, recruiter mail and job alert digests, and work out:
+**From the inbox** — search Gmail across about 30 days for application receipts and recruiter mail, to find **roles already in flight**. These become the tracker's first rows.
 
-- The `Source` select options — the boards actually sending them mail.
-- The alert senders to ignore — the digests that otherwise flood every run. This is the biggest source of noise in a job-hunting inbox.
-- Roles already in flight — candidate first rows, which the stale check needs to be useful from day one.
+This matters more than it looks: the stale check works off Last Activity, or Date Applied when empty, so an empty tracker has nothing that *can* go stale — and the applications most likely to have gone quiet are the ones predating the setup. Nothing else needs discovering: Source is derived per-email from the sending domain, and the digests to ignore are named in the prompt.
 
 This is the one point in setup that touches a lot of email. It is read-only, but **show the list and get a yes before creating rows.** Importing a month of someone's history silently is a bad first impression, and they may want half of it left out.
 
-**Then confirm and ask one question.** Show one short screen of what you worked out — name and addresses, location and time zone, seniority and domain, boards found, how many applications you can seed — and ask them to correct anything wrong.
+**Then confirm and ask one question.** Show one short screen of what you worked out — name and addresses, location and time zone, seniority and domain, how many applications you can seed — and ask them to correct anything wrong.
 
 Then ask the one thing neither source can supply:
 
@@ -74,10 +72,12 @@ Create the **Job Search HQ** page first, then the tracker inside it, then its tw
 | Email Link | URL | The Gmail thread URL |
 | Date Applied | Date | Empty for inbound approaches |
 | Last Activity | Date | Driven by the scan; the stale check reads this |
-| Source | Select | `Seek` (blue), `LinkedIn` (purple), `Direct` (grey), `Other` (default) — use the boards found in step 1 |
+| Source | Text | Derived from the sending domain — see below |
 | Status | **Status** | Grouped, see below. Default `Not started` |
 | Fit Score | Select | `Strong` (green), `Possible` (yellow), `Poor` (red) |
 | Notes | Text | Running history, newest sentence appended |
+
+**Source is plain text, derived from the sending domain, not a dropdown.** A fixed option list has to be chosen before anyone knows which boards this person uses, and a list of Australian boards is useless to someone in the UK — everything lands in `Other`. Deriving from the domain is always right and needs no maintenance: `seek.com.au` becomes `Seek`, a company writing directly becomes its own name. Expect applicant-tracking vendors (Workable, Greenhouse, JobAdder, SmartRecruiters) since that is who sends receipts; use the vendor name, which still beats `Other`. You lose grouping and colouring by Source, which does not matter — the view that matters groups by Status.
 
 **Status must be a Status property, not a Select** — a board view cannot group by a Select. Groups: **To-do** = `Not started`; **In progress** = `In progress`, `Engaged`, `Interviewing`; **Complete** = `Completed`, `Stale`.
 
@@ -102,7 +102,7 @@ Two conventions the scan relies on: `REPLY NEEDED.` at the start of Notes means 
 
 The filter is the point. A job hunt accumulates dead weight fast, so hiding `Poor` fits and `Stale` rows leaves only live, plausible opportunities — which is what makes it a daily view rather than an archive. Nothing is deleted; the table view still has everything. Showing empty groups matters in a small way too: an empty `Interviewing` column is informative.
 
-**Candidate Profile** — the profile from step 1 as prose, under headings: Basics; What I'm looking for; Background in one paragraph; Skills; Profiles; Where I'm applying; Live as of `<date>`.
+**Candidate Profile** — the profile from step 1 as prose, under headings: Basics; What I'm looking for; Background in one paragraph; Skills; Profiles; Live as of `<date>`.
 
 **If they already have a tracker**, do not replace it. Read its schema, map these concepts onto its columns, and adapt the prompt below to the names it actually uses. A tracker they already trust beats a tidier one they abandon. If their Status is a Select, the board cannot group by it — say so and offer the conversion, but do not do it unasked, since changing a property type touches every row.
 
@@ -134,14 +134,14 @@ You are keeping {{NAME}}'s job application tracker up to date. About {{NAME}}: {
 
    Read in full any thread that is about {{NAME}}'s job search: a recruiter or hirer writing to them, a reply on an application, an interview request, a rejection, a profile-view or profile-download notice, or an application receipt.
 
-2. Ignore job alert digests ({{ALERT_SENDERS}}), verification codes, security alerts, newsletters, and anything unrelated to job hunting.
+2. Ignore job alert digests (SEEK, Indeed, LinkedIn "new jobs for", Jora, and any other "new jobs for you" mailout), verification codes, security alerts, newsletters, and anything unrelated to job hunting.
 
 3. Open the Notion database "Job Applications Tracker" at {{TRACKER_URL}} (data source {{TRACKER_DATASOURCE}}). Fetch it first to get the current schema, then query the existing rows.
 
 4. For each relevant email:
    - If a row already exists for that role, recruiter or Gmail thread, and its Notes or Last Activity already reflect this email, skip it. An earlier run has recorded it. Do not add the same note twice.
    - If a row exists but this email is new to it, update that row: set Last Activity to the email date and add one short sentence to Notes saying what changed. Do not duplicate rows.
-   - If there is no row, create one. Use the existing columns only: Role/Company written as "Role @ Company", Company (for an agency add the end client if named, otherwise "(end client not yet known)"), Recruiter/Contact, Email Link (the Gmail thread URL), Date Applied if {{NAME}} applied, Last Activity, Source ({{SOURCE_OPTIONS}}), Status, Fit Score, and Notes.
+   - If there is no row, create one. Use the existing columns only: Role/Company written as "Role @ Company", Company (for an agency add the end client if named, otherwise "(end client not yet known)"), Recruiter/Contact, Email Link (the Gmail thread URL), Date Applied if {{NAME}} applied, Last Activity, Source (derive it from the sending domain: a known job board becomes its name, such as seek.com.au to "Seek" or linkedin.com to "LinkedIn"; an applicant-tracking or agency sender becomes that company's name; a company writing directly becomes its own name), Status, Fit Score, and Notes.
    - If the email needs a reply from {{NAME}}, start Notes with "REPLY NEEDED." and say in one sentence what the sender is asking for. Do not draft the reply.
 
 5. Status values and when to use them:
