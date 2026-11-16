@@ -35,9 +35,23 @@ Everything is read-only apart from adding and updating rows in your tracker.
 
 You also need somewhere that can run scheduled tasks. Without that, the tracker and the task prompt still get created and you can run the prompt by hand.
 
-## Install
+## Two ways to use it
 
-**Claude.ai** — download `job-search-init.skill` from this repo, then Settings → Capabilities → Skills → upload it.
+### Just prompt it (nothing to install)
+
+Paste this into Claude, with Notion, Gmail and Drive connected:
+
+> follow the instructions at https://raw.githubusercontent.com/BCusack/job-search-init-skill/main/INIT.md and set this up
+
+[`INIT.md`](INIT.md) is self-contained — one fetch and Claude has the whole procedure. It'll confirm with you before creating anything.
+
+This is a one-time run. Nothing lands in your skills list, so it won't trigger itself later.
+
+### Install it as a skill (triggers itself)
+
+Once installed, you just say "help me track my job applications" and Claude picks it up on its own.
+
+**Claude app** — first check **Code execution and file creation** is on in Settings → Capabilities (it's called **Create and edit files** in the newer Settings layout; skills don't run without it). Then go to **Customize → Skills**, click **+**, then **+ Create skill**, and choose **Upload a skill**. Download `job-search-init.skill` from this repo and upload it there, or attach it to a chat and use the **Save skill** button on the file card.
 
 **Claude Code** — clone into your skills directory:
 
@@ -46,7 +60,9 @@ git clone https://github.com/BCusack/job-search-init-skill.git
 cp -r job-search-init-skill/job-search-init ~/.claude/skills/
 ```
 
-Then start a conversation and say something like *"help me set up a job application tracker"* or *"I've just been made redundant and I need to get organised"*. The skill triggers on its own.
+Then say something like *"help me set up a job application tracker"* or *"I've just been made redundant and I need to get organised"*.
+
+Skills don't sync between the app and Claude Code, so install it in each place you want it.
 
 To rebuild the `.skill` file after editing:
 
@@ -57,6 +73,7 @@ python -m scripts.package_skill job-search-init
 ## Layout
 
 ```
+INIT.md                               self-contained, for the prompt route
 job-search-init/
 ├── SKILL.md                          the workflow Claude follows
 └── references/
@@ -74,6 +91,8 @@ The Status and Fit Score meanings in `notion-schemas.md` are the part worth read
 For a non-Gmail mail connector, the structure in `inbox-scan-prompt.md` holds but the search syntax doesn't; that file explains what to rewrite and why the search window deliberately overlaps the schedule.
 
 Everything else comes from your resume and inbox, so it adapts on its own.
+
+If you change the skill, update `INIT.md` too — it's a flattened copy of the same instructions and won't follow along by itself.
 
 ## Running it again
 
