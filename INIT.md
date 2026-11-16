@@ -38,13 +38,13 @@ Do not interview them. Read their resume and their inbox, then confirm.
 
 No resume in Drive? Ask for one or ask them to paste it. If they have neither, skip to the fallback questions below.
 
-**From the inbox** — search Gmail across about 60 days for application receipts, recruiter mail and job alert digests, and work out:
+**From the inbox** — search Gmail across about 30 days for application receipts, recruiter mail and job alert digests, and work out:
 
 - The `Source` select options — the boards actually sending them mail.
 - The alert senders to ignore — the digests that otherwise flood every run. This is the biggest source of noise in a job-hunting inbox.
 - Roles already in flight — candidate first rows, which the stale check needs to be useful from day one.
 
-This is the one point in setup that touches a lot of email. It is read-only, but **show the list and get a yes before creating rows.** Importing sixty days of someone's history silently is a bad first impression, and they may want half of it left out.
+This is the one point in setup that touches a lot of email. It is read-only, but **show the list and get a yes before creating rows.** Importing a month of someone's history silently is a bad first impression, and they may want half of it left out.
 
 **Then confirm and ask one question.** Show one short screen of what you worked out — name and addresses, location and time zone, seniority and domain, boards found, how many applications you can seed — and ask them to correct anything wrong.
 

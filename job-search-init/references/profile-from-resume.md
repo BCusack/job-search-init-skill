@@ -22,13 +22,13 @@ If no resume turns up, ask for one or ask them to paste it. If they have neither
 
 Which job boards they use and what they have already applied to are both sitting in their email. Searching is better than asking: people forget half of it, and the inbox is current.
 
-Search Gmail across about 60 days for application receipts, recruiter mail, and job alert digests. From that, work out:
+Search Gmail across about 30 days for application receipts, recruiter mail, and job alert digests. From that, work out:
 
 - **The `Source` options** — the boards actually sending them mail.
 - **The alert senders to ignore** — the digests that will otherwise flood every run. This is the single biggest source of noise in a job-hunting inbox.
 - **Roles already in flight** — candidate first rows for the tracker, which the stale check needs in order to be useful from day one.
 
-This is the one point in setup that touches a lot of email at once. It is read-only, but show the list and get a yes before creating rows. Importing sixty days of someone's history silently is not a good first impression, and they may want half of it left out.
+This is the one point in setup that touches a lot of email at once. It is read-only, but show the list and get a yes before creating rows. Importing a month of someone's history silently is not a good first impression, and they may want half of it left out.
 
 ## Step C — Confirm, and ask about pay
 

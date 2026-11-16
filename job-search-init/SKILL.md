@@ -27,7 +27,7 @@ If a connector is missing, tell the person which one and how it changes what the
 
 ## Step 1 — Derive the candidate profile
 
-Do not interview them. Read `references/profile-from-resume.md` and follow it: read their resume from Drive, read 60 days of inbox to find which boards they use and what is already in flight, then show one screen of what you worked out for them to correct.
+Do not interview them. Read `references/profile-from-resume.md` and follow it: read their resume from Drive, read 30 days of inbox to find which boards they use and what is already in flight, then show one screen of what you worked out for them to correct.
 
 Ask exactly one question — their pay expectation. Neither the resume nor the inbox can tell you, and Fit Score drives the Board filter, so a vague answer there makes the board hide the wrong rows. Ask it directly and wait for the answer; do not infer a figure from their seniority.
 
