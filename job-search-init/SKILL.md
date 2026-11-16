@@ -25,18 +25,13 @@ This needs **Notion** and **Gmail**, and optionally **Google Drive**. Check they
 
 If a connector is missing, tell the person which one and how it changes what they get. Do not try to work around a missing connector with web browsing or by asking them to paste their inbox.
 
-## Step 1 — Build the candidate profile
+## Step 1 — Derive the candidate profile
 
-The scan's Fit Score decisions come from this, so it is worth getting right. Read `references/profile-questions.md` for the questions and how to ask them.
+Do not interview them. Read `references/profile-from-resume.md` and follow it: read their resume from Drive, read 60 days of inbox to find which boards they use and what is already in flight, then show one screen of what you worked out for them to correct.
 
-Two shortcuts make this much less tedious:
+Ask exactly one question — their pay expectation. Neither the resume nor the inbox can tell you, and Fit Score drives the Board filter, so a vague answer there makes the board hide the wrong rows. Ask it directly and wait for the answer; do not infer a figure from their seniority.
 
-- **Offer to read their resume from Drive first.** Search Drive for a resume or CV, read it, and come back with the profile mostly filled in for them to correct. Correcting a draft is far easier than answering a dozen questions cold.
-- **Ask in batches, not one at a time.** Group the questions and let them answer in prose. People describe their own situation better in their own words than in a form.
-
-Do not guess at pay expectations or work rights. Those two shape every scoring decision the automation makes later, and a wrong guess quietly mis-sorts everything.
-
-When the profile is settled, show it back to them as a short summary and get their agreement before building anything. This is the last cheap moment to fix a misunderstanding.
+Get their agreement on the summary before building anything. This is the last cheap moment to fix a misunderstanding.
 
 ## Step 2 — Create the Notion structure
 

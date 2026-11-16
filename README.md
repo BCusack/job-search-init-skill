@@ -6,7 +6,7 @@ Built from a setup that has been running daily through a real job hunt, generali
 
 ## What you get
 
-Run the skill once and Claude will interview you for about ten minutes, then create:
+Run the skill once. It reads your resume from Drive and scans 60 days of your inbox to work out most of the setup itself, asks you one question (your pay expectation), then creates:
 
 - **Job Search HQ** — one Notion page holding everything.
 - **Job Applications Tracker** — one row per role or recruiter approach, with status, fit score, last activity and a running history.
@@ -60,7 +60,7 @@ python -m scripts.package_skill job-search-init
 job-search-init/
 ├── SKILL.md                          the workflow Claude follows
 └── references/
-    ├── profile-questions.md          the interview, and resume pre-fill
+    ├── profile-from-resume.md        what to read from the resume and inbox
     ├── notion-schemas.md             exact database, properties, select options
     ├── inbox-scan-prompt.md          task prompt template + why it's shaped this way
     └── scheduled-tasks.md            schedule, model choice, notifications
@@ -73,7 +73,7 @@ The Status and Fit Score meanings in `notion-schemas.md` are the part worth read
 
 For a non-Gmail mail connector, the structure in `inbox-scan-prompt.md` holds but the search syntax doesn't; that file explains what to rewrite and why the search window deliberately overlaps the schedule.
 
-Everything else is driven by the interview, so it adapts on its own.
+Everything else comes from your resume and inbox, so it adapts on its own.
 
 ## Running it again
 

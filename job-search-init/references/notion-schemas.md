@@ -85,7 +85,7 @@ Not part of the standard setup, but worth offering if they want them:
 
 ## Candidate Profile (page)
 
-The prose profile from `profile-questions.md`. Lives here so the person can edit it, and so you can read it next time to refresh the scheduled task when something changes.
+The prose profile from `profile-from-resume.md`. Lives here so the person can edit it, and so you can read it next time to refresh the scheduled task when something changes.
 
 ## If they already have a tracker
 
