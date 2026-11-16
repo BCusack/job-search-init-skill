@@ -9,8 +9,9 @@ This skill stands up a job application tracker in about ten minutes of conversat
 
 1. A **Job Search HQ** page in Notion holding everything.
 2. A **Job Applications Tracker** database — one row per role or recruiter approach, with status, fit score and a running history.
-3. A **Candidate Profile** page — the facts about them that the automation reads.
-4. An **inbox scan** scheduled task that keeps the tracker current from their email.
+3. A **Board** view of that tracker — a kanban board they drag applications across as each one moves.
+4. A **Candidate Profile** page — the facts about them that the automation reads.
+5. An **inbox scan** scheduled task that keeps the tracker current from their email.
 
 The system is built around one idea worth understanding before you start: *a job hunt goes wrong in the gaps*. A recruiter replies and it gets buried under job alert digests. An application goes quiet for five weeks and nobody notices. The tracker is the single place where state lives, and the scheduled task exists to keep that state true without the person doing data entry while they are also being interviewed, rejected, and approached by six agencies.
 
@@ -41,7 +42,7 @@ When the profile is settled, show it back to them as a short summary and get the
 
 Read `references/notion-schemas.md` for the database, its properties and select options, then create them.
 
-Order matters: create the **Job Search HQ** page first, then the tracker inside it, then the Candidate Profile page. Keep the page URL and data source ID as you go — the scheduled task in step 3 needs them, and hunting for them afterwards is slow.
+Order matters: create the **Job Search HQ** page first, then the tracker inside it, then its two views, then the Candidate Profile page. Keep the page URL and data source ID as you go — the scheduled task in step 3 needs them, and hunting for them afterwards is slow.
 
 If the person already has a tracker of their own, do not replace it. Ask whether to use theirs or start fresh. If they want to keep theirs, read its schema and adapt the task prompt in step 3 to the columns it actually has. A tracker someone already trusts is worth more than a tidier one they do not.
 
@@ -57,7 +58,8 @@ The template has `{{PLACEHOLDERS}}` filled from the profile and from the IDs cre
 
 A system nobody understands gets abandoned. Finish with a short, concrete summary:
 
-- Links to the HQ page and the tracker.
+- Links to the HQ page and the tracker, pointing them at the Board view as the one to use day to day.
+- That the board deliberately hides `Poor` fits and stale rows, and that nothing is deleted — the table view still has everything.
 - The task name, when it runs, and how to pause or edit it.
 - The three things the automation will never do: send email, reply to anyone, or move a row to "Completed". Those stay with the person.
 - One sentence on what to do first — usually "add the roles you have already applied to, so the stale check has something to work with".

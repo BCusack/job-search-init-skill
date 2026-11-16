@@ -9,7 +9,8 @@ Built from a setup that has been running daily through a real job hunt, generali
 Run the skill once and Claude will interview you for about ten minutes, then create:
 
 - **Job Search HQ** — one Notion page holding everything.
-- **Job Applications Tracker** — one row per role or recruiter approach, with status, fit score, last activity and a running history. Views for what's active, what needs a reply, and what's going cold.
+- **Job Applications Tracker** — one row per role or recruiter approach, with status, fit score, last activity and a running history.
+- **A Board view** — kanban, grouped by status, so you drag an application from Not started to Engaged to Interviewing as it moves. Filtered to live, plausible roles: poor fits and stale rows drop off the board but stay in the table.
 - **Candidate Profile** — the facts about you that the automation reads.
 - **Inbox scan** — a scheduled task that reads your job-search email hourly on weekdays and updates the tracker: new approaches become rows, replies move rows forward, anything needing your reply gets flagged `REPLY NEEDED.`, outcomes get recorded, and anything untouched for 28 days goes stale.
 
